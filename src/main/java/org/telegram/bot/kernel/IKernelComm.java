@@ -56,6 +56,8 @@ public interface IKernelComm extends NotificationsService.NotificationObserver {
 
     void sendGroupMessage(@NotNull Chat group, @NotNull String message) throws RpcException;
 
+    void sendGroupMessageAsReply(@NotNull Chat group, @NotNull String message, @NotNull Integer replayToMsg) throws RpcException;
+
     void sendGroupMessageWithMarkdown(@NotNull Chat group, @NotNull String message) throws RpcException;
 
     void sendGroupMessageWithoutPreview(@NotNull Chat group, @NotNull String message) throws RpcException;

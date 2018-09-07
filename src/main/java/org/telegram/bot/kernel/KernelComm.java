@@ -521,6 +521,11 @@ public class KernelComm implements IKernelComm {
     }
 
     @Override
+    public void sendGroupMessageAsReply(@NotNull Chat group, @NotNull String message, @NotNull Integer replayToMsg) throws RpcException {
+        sendMessageGroupInternal(group, message, replayToMsg, true, false);
+    }
+
+    @Override
     public void sendGroupMessageWithMarkdown(@NotNull Chat group, @NotNull String message) throws RpcException {
         sendMessageGroupInternal(group, message, null, true, true);
     }
